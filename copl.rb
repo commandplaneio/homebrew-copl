@@ -5,20 +5,20 @@
 class Copl < Formula
   desc ""
   homepage "https://github.com/commandplaneio/copl"
-  version "0.2.5"
+  version "0.2.6"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.2.5/copl_0.2.5_darwin_arm64.tar.gz"
-      sha256 "1a1fff26d5eed27d2ebb15004963ef465befbaf5634f680aa6c57c018f511fa0"
+      url "https://github.com/commandplaneio/copl/releases/download/v0.2.6/copl_0.2.6_darwin_arm64.tar.gz"
+      sha256 "4afc53eb15f5ac277b7f94ecc979e2a754e18679dca4348e72975a90e73572b1"
 
       def install
         bin.install "copl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.2.5/copl_0.2.5_darwin_amd64.tar.gz"
-      sha256 "67c0b25d102cd98bc9c02dc485736e766b632d33be6e4ba283af2bf64aa191b2"
+      url "https://github.com/commandplaneio/copl/releases/download/v0.2.6/copl_0.2.6_darwin_amd64.tar.gz"
+      sha256 "f6d7596991c13154115527addccf37b6e90727c3e387ba703a9962719dfc610f"
 
       def install
         bin.install "copl"
@@ -28,16 +28,16 @@ class Copl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.2.5/copl_0.2.5_linux_arm64.tar.gz"
-      sha256 "10b10f8a8b022a8f3a7d76ded08b186e75380159b27857c4f08b093461483347"
+      url "https://github.com/commandplaneio/copl/releases/download/v0.2.6/copl_0.2.6_linux_arm64.tar.gz"
+      sha256 "5927b1fb1540daeb25440a08ecbb6fc0636a16313df54e05c1f0cb16fcb7eef7"
 
       def install
         bin.install "copl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.2.5/copl_0.2.5_linux_amd64.tar.gz"
-      sha256 "46febe4e93a61486bf707ece2ba7eb65e4f0156c6a7445818edddf6d62a42f8c"
+      url "https://github.com/commandplaneio/copl/releases/download/v0.2.6/copl_0.2.6_linux_amd64.tar.gz"
+      sha256 "1117736f836625a83087ff8e1b5801278063eda529b2bfd1fb45ab8c22d1b128"
 
       def install
         bin.install "copl"
