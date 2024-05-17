@@ -5,20 +5,20 @@
 class Copl < Formula
   desc ""
   homepage "https://github.com/commandplaneio/copl"
-  version "0.1.7"
+  version "0.1.8"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.1.7/copl_0.1.7_darwin_amd64.tar.gz"
-      sha256 "3ebfec978095dde771194ff9a2cb747810f06bca63146f990f4ed8dd5b9500a9"
+    on_intel do
+      url "https://github.com/commandplaneio/copl/releases/download/v0.1.8/copl_0.1.8_darwin_amd64.tar.gz"
+      sha256 "c20034f206989b89e0cf8653006db0624e2e575a5c1c409c4af8f5ffe4dc0415"
 
       def install
         bin.install "copl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.1.7/copl_0.1.7_darwin_arm64.tar.gz"
-      sha256 "6d276eb004cc6ee93a47f3280a53ff4f73db962031eef4002983ee66d44a060c"
+    on_arm do
+      url "https://github.com/commandplaneio/copl/releases/download/v0.1.8/copl_0.1.8_darwin_arm64.tar.gz"
+      sha256 "a75bd230b31c85c41ac12b8321256f70fa252dd53410ea5fa7d9ed3dbba87f2f"
 
       def install
         bin.install "copl"
@@ -27,20 +27,24 @@ class Copl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.1.7/copl_0.1.7_linux_amd64.tar.gz"
-      sha256 "036eb2a7e8d1998c805a7642d40bc8fe75001baf70e9e1d1cf46c559fab31717"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/commandplaneio/copl/releases/download/v0.1.8/copl_0.1.8_linux_amd64.tar.gz"
+        sha256 "61d093dc3e7e9351550cf682ec3cebea4d8bfdbdaa7aa70d498462d4a355b29c"
 
-      def install
-        bin.install "copl"
+        def install
+          bin.install "copl"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/commandplaneio/copl/releases/download/v0.1.7/copl_0.1.7_linux_arm64.tar.gz"
-      sha256 "c114ae14bad38d43b4a8b91d1f35e0b70c53044668f19e5b44a3650e721f3c04"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/commandplaneio/copl/releases/download/v0.1.8/copl_0.1.8_linux_arm64.tar.gz"
+        sha256 "c2473303cd2fa1eed5257145e6b06a392e1ca88e79640d2407cb9b37df5c27f7"
 
-      def install
-        bin.install "copl"
+        def install
+          bin.install "copl"
+        end
       end
     end
   end
